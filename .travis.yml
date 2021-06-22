@@ -1,15 +1,11 @@
 language: python
 python:
-  - 2.7
-  - 3.4
+  - 3.7
+  - 3.9
   - pypy
   - pypy3
 env:
-  - DJANGO=1.8.18
-  - DJANGO=1.9.13
-  - DJANGO=1.10.8
-  - DJANGO=1.11.10
-  - DJANGO=2.0.2
+  - DJANGO=3.1.7
 before_install:
   - export DJANGO_SETTINGS_MODULE=suit.tests.settings
 install:
