@@ -3,7 +3,7 @@ from suit.widgets import LinkedSelect, HTML5Input, EnclosedInput, \
     NumberInput, SuitDateWidget, SuitTimeWidget, SuitSplitDateTimeWidget, \
     AutosizedTextarea
 from django.utils.translation import ugettext as _
-from django.conf.urls.static import static
+from django.templatetags.static import static
 from suit import utils
 
 django_version = utils.django_major_version()
@@ -163,5 +163,5 @@ class WidgetsTestCase(TestCase):
         txt = AutosizedTextarea()
         js_url = static('suit/js/jquery.autosize-min.js')
         self.assertHTMLEqual(str(txt.media),
-                             '<script type="text/javascript" src="%s"></script>'
+                             '<script src="%s"></script>'
                              % js_url)
