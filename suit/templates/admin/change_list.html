@@ -18,6 +18,12 @@
       {#      #changelist table thead th:first-child {width: inherit}#}
     </style>
   {% endif %}
+  <style>
+    :root {
+      --body-bg: #fff;
+      --border-color: #ccc;
+    }
+  </style>
 {% endblock %}
 
 {% block extrahead %}
@@ -27,7 +33,7 @@
     <script type="text/javascript">
       (function ($) {
         $(document).ready(function ($) {
-          $("tr input.action-select").actions();
+          $("tr input.action-select").actions;
         });
       })(django.jQuery);
     </script>
