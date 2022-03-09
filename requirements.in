@@ -1,0 +1,11 @@
+#########################
+#
+# To update requirements.txt
+#   Install pip-tools :
+#       pip install pip-tools
+#   Run the pip-compile
+#       pip-compile --no-annotate --output-file=requirements.txt requirements.in
+#
+#########################
+
+django==3.0.14
