@@ -8,7 +8,7 @@ v0.2.29 (2022-03-10)
 --------------------
 * [Documentation] Added a `README-Railnova.md` explaining the purpose and usage of the branch `Supernova`
 * [Feature] Add `requirements.in` and `requirements.txt` files to support the upgrade to Django 3+
-* [Feature] Upgrade to Django 3.0.14
+* [Feature] Upgrade to Django 3.1.14
 
 
 v0.2.28 (2019-10-02)
