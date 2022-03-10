@@ -1,4 +1,4 @@
-# Supernova Fork from `master` (v2.28)
+# Supernova Fork from `master` (v0.2.28)
 
 This branch is is forked from `master` and intended to be used with Supernova
 
