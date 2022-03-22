@@ -4,6 +4,11 @@ Changelog
 Only important changes are mentioned below. See `commit log <https://github.com/darklow/django-suit/commits/develop>`_, `closed issues <https://github.com/darklow/django-suit/issues?direction=desc&sort=updated&state=closed>`_ and `closed pull
 requests <https://github.com/darklow/django-suit/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed>`_ for full changes.
 
+v0.2.30 (2022-03-22)
+--------------------
+* [Fix] remove a dependency on `django.contrib.admin.templatetags.admin_static` (not available in Django 3+)
+
+
 v0.2.29 (2022-03-10)
 --------------------
 * [Documentation] Added a `README-Railnova.md` explaining the purpose and usage of the branch `Supernova`
