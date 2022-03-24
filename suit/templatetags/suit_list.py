@@ -28,22 +28,24 @@ DOT = '.'
 
 
 @register.simple_tag
-def paginator_number(cl, i):
+def paginator_number(cl, page_num):
     """
     Generates an individual page index link in a paginated list.
     """
-    if i == DOT:
+    if page_num == DOT:
         return mark_safe(
                 '<li class="disabled"><a href="#" onclick="return false;">..'
                 '.</a></li>')
-    elif i == cl.page_num:
+    # the index became 1 based since Python 3.2 (see: https://github.com/railnova/Supernova/issues/10724)
+    i = page_num + 1
+    if i == cl.page_num:
         return mark_safe(
-            '<li class="active"><a href="">%d</a></li> ' % (i + 1))
+            '<li class="active"><a href="">%d</a></li> ' % i)
     else:
         return mark_safe('<li><a href="%s"%s>%d</a></li> ' % (
             escape(cl.get_query_string({PAGE_VAR: i})),
             (i == cl.paginator.num_pages - 1 and ' class="end"' or ''),
-            i + 1))
+            i))
 
 
 @register.simple_tag
