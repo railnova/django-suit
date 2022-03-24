@@ -4,9 +4,16 @@ Changelog
 Only important changes are mentioned below. See `commit log <https://github.com/darklow/django-suit/commits/develop>`_, `closed issues <https://github.com/darklow/django-suit/issues?direction=desc&sort=updated&state=closed>`_ and `closed pull
 requests <https://github.com/darklow/django-suit/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed>`_ for full changes.
 
+v0.2.31 (2022-03-??)
+--------------------
+* [Feature] Upgrade the dependency on Django to v3.2.12
+* [Fix] Django 3.2 compatibility : the `paginator_number` is now 1-based (see: https://github.com/railnova/Supernova/issues/10724).
+* [Fix] Gitignore any `/venv*` directory (ie: `/venv`, `/venv38`, etc)
+
+
 v0.2.30 (2022-03-22)
 --------------------
-* [Fix] remove a dependency on `django.contrib.admin.templatetags.admin_static` (not available in Django 3+)
+* [Fix] Remove a dependency on `django.contrib.admin.templatetags.admin_static` (not available in Django 3+)
 
 
 v0.2.29 (2022-03-10)
