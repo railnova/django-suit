@@ -4,6 +4,11 @@ Changelog
 Only important changes are mentioned below. See `commit log <https://github.com/darklow/django-suit/commits/develop>`_, `closed issues <https://github.com/darklow/django-suit/issues?direction=desc&sort=updated&state=closed>`_ and `closed pull
 requests <https://github.com/darklow/django-suit/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed>`_ for full changes.
 
+v0.2.34 (2022-04-01)
+--------------------
+* [Fix] Make the full "Select all" and related actions work again in the ChangeList view (see: https://github.com/railnova/Supernova/issues/10753).
+
+
 v0.2.33 (2022-03-31)
 --------------------
 * [Fix] Make the "Select all" checkbox visible again in the ChangeList view (see: https://github.com/railnova/Supernova/issues/10750).
