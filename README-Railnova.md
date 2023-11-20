@@ -1,11 +1,11 @@
-# Supernova Fork from `master` (v0.2.28)
+# Supernova Fork from `master` (v0.2.38)
 
 This branch is is forked from `master` and intended to be used with Supernova
 
 Once checked out, do not forget to activate the `venv` and install its packages :
 
 ```
-python3.8 -m venv venv
+python3.11 -m venv venv
 source ./venv/bin/activate
 pip install -r requirement.txt
 ```

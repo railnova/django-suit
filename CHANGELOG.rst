@@ -4,6 +4,11 @@ Changelog
 Only important changes are mentioned below. See `commit log <https://github.com/darklow/django-suit/commits/develop>`_, `closed issues <https://github.com/darklow/django-suit/issues?direction=desc&sort=updated&state=closed>`_ and `closed pull
 requests <https://github.com/darklow/django-suit/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed>`_ for full changes.
 
+v0.2.38 (2023-11-20)
+--------------------
+* [Fix] Upgrade to Python 3.11, resolve deprecation of `inspect.getargspec`.
+
+
 v0.2.37 (2023-09-26)
 --------------------
 * [Fix] Upgrade to Django 4.2.5, resolve deprecations (the `ifequal` tags, `django.conf.urls` deprecated `url` and `patterns`).
