@@ -38,12 +38,20 @@ Contributing
 See `Contributing documentation <http://django-suit.readthedocs.org/en/develop/contributing.html>`_
 
 
+Requirements
+============
+
+* **Django**: 5.0, 5.1+
+* **Python**: 3.11, 3.12, 3.13+
+
+For older Django versions, please use Django Suit 0.2.x.
+
 Build Status
 ============
 
 Django Suit uses Travis CI to perform tests on different Django and Python versions.
 
-Tested using Python: 2.5-3.4. Django: 1.4-1.10. Develop / Master:
+Current version tested with Python 3.11-3.13 and Django 5.0-5.1. Develop / Master:
 
 .. |develop| image:: https://travis-ci.org/darklow/django-suit.png?branch=develop
    :alt: Build Status - develop branch

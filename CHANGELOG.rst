@@ -8,7 +8,7 @@ v0.3.0 (2025-12-30)
 --------------------
 
 * [Feature] Django 5.x support - Full upgrade to support Django 5.0 and 5.1.
-* [Breaking] Dropped support for Django < 5.0 and Python < 3.10.
+* [Breaking] Dropped support for Django < 5.0 and Python < 3.11.
 * [Fix] Updated all deprecated imports (django.conf.urls to django.urls).
 * [Fix] Updated force_text to force_str for Django 5.x compatibility.
 * [Fix] Updated ugettext to gettext for Django 5.x compatibility.

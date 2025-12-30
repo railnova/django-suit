@@ -1,13 +1,21 @@
 Getting Started
 ===============
 
+Requirements
+------------
+
+* **Django**: 5.0, 5.1+
+* **Python**: 3.11, 3.12, 3.13+
+
+.. note:: For Django < 5.0, please use Django Suit 0.2.x (``pip install django-suit==0.2.28``)
+
 Installation
 ------------
 
 
 1. You can get stable version of Django Suit by using pip or easy_install::
 
-    pip install django-suit==0.2.28
+    pip install django-suit==0.3.0
 
 2. You will need to add the ``'suit'`` application to the ``INSTALLED_APPS`` setting of your Django project ``settings.py`` file.::
 
@@ -19,15 +27,7 @@ Installation
 
   .. important:: ``'suit'`` must be added before ``'django.contrib.admin'`` and if you are using third-party apps with special admin support (like django-cms) you also need to add ``'suit'`` before ``'cms'``.
 
-3. **For Django < 1.9:** You need to add ``'django.core.context_processors.request'`` to ``TEMPLATE_CONTEXT_PROCESSORS`` setting in your Django project ``settings.py`` file.::
-
-      from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
-
-      TEMPLATE_CONTEXT_PROCESSORS = TCP + (
-          'django.core.context_processors.request',
-      )
-
-  **For Django >= 1.9 or with new Django ``TEMPLATES`` setting:** Make sure you have ``django.template.context_processors.request`` in your ``TEMPLATES`` ``OPTIONS`` ``context_processors`` setting in your Django project ``settings.py`` file.::
+3. Make sure you have ``django.template.context_processors.request`` in your ``TEMPLATES`` ``OPTIONS`` ``context_processors`` setting in your Django project ``settings.py`` file.::
 
 
       TEMPLATES = [
