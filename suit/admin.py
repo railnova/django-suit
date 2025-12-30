@@ -7,6 +7,16 @@ try:
 except:
     from django.core.urlresolvers import reverse_lazy
 
+# Import sortable classes for backward compatibility
+# These are re-exported here so code can import from suit.admin
+from suit.sortables import (
+    SortableModelAdmin,
+    SortableTabularInline,
+    SortableStackedInline,
+    SortableGenericTabularInline,
+    SortableGenericStackedInline,
+)
+
 """
 Adapted by using following examples:
 https://djangosnippets.org/snippets/2887/
