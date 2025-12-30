@@ -82,19 +82,13 @@ class WidgetsTestCase(TestCase):
         self.assertEqual("p", sdw.attrs["placeholder"])
 
     def get_SuitDateWidget_output(self):
-        if django_version < (1, 11):
-            return (
-                '<div class="input-append suit-date"><input class="vDateField '
-                'input-small " name="sdw" placeholder="Date" '
-                'size="10" type="text" /><span class="add-on"><i '
-                'class="icon-calendar"></i></span></div>'
-            )
-        else:
-            return (
-                '<div class="input-append suit-date"><input type="text" name="sdw" '
-                'value="" class="vDateField input-small " size="10" placeholder="Date" />'
-                '<span class="add-on"><i class="icon-calendar"></i></span></div>'
-            )
+        # Django 5.x wraps input in <p class="date"> tag
+        return (
+            '<div class="input-append suit-date"><p class="date">'
+            '<input type="text" name="sdw" '
+            'value="" class="vDateField input-small " size="10" placeholder="Date" />'
+            '</p><span class="add-on"><i class="icon-calendar"></i></span></div>'
+        )
 
     def test_SuitDateWidget_output(self):
         sdw = SuitDateWidget(attrs={"placeholder": "Date"})
@@ -118,20 +112,13 @@ class WidgetsTestCase(TestCase):
         self.assertEqual("p", sdw.attrs["placeholder"])
 
     def get_SuitTimeWidget_output(self):
-        if django_version < (1, 11):
-            return (
-                '<div class="input-append suit-date suit-time"><input '
-                'class="vTimeField input-small " name="sdw" '
-                'placeholder="Time" size="8" type="text" /><span '
-                'class="add-on"><i class="icon-time"></i></span></div>'
-            )
-        else:
-            return (
-                '<div class="input-append suit-date suit-time"><input '
-                'type="text" name="sdw" value="" class="vTimeField input-small " '
-                'size="8" placeholder="Time" /><span class="add-on">'
-                '<i class="icon-time"></i></span></div>'
-            )
+        # Django 5.x wraps input in <p class="time"> tag
+        return (
+            '<div class="input-append suit-date suit-time"><p class="time">'
+            '<input type="text" name="sdw" value="" class="vTimeField input-small " '
+            'size="8" placeholder="Time" />'
+            '</p><span class="add-on"><i class="icon-time"></i></span></div>'
+        )
 
     def test_SuitTimeWidget_output(self):
         sdw = SuitTimeWidget(attrs={"placeholder": "Time"})
@@ -139,17 +126,15 @@ class WidgetsTestCase(TestCase):
         self.assertHTMLEqual(self.get_SuitTimeWidget_output(), output)
 
     def get_SuitSplitDateTimeWidget_output(self):
-        if django_version < (1, 11):
-            dwo = self.get_SuitDateWidget_output().replace("sdw", "sdw_0")
-            two = self.get_SuitTimeWidget_output().replace("sdw", "sdw_1")
-            return '<div class="datetime">%s %s</div>' % (dwo, two)
-        else:
-            return (
-                '<div class="datetime"><input type="text" name="sdw_0" '
-                'class="vDateField input-small " size="10" placeholder="Date" '
-                '/><input type="text" name="sdw_1" class="vTimeField input-small " '
-                'size="8" placeholder="Time" /></div>'
-            )
+        # Django 5.x wraps each input in <p> tags
+        return (
+            '<div class="datetime">'
+            '<p class="date"><input type="text" name="sdw_0" '
+            'class="vDateField input-small " size="10" placeholder="Date" /></p>'
+            '<p class="time"><input type="text" name="sdw_1" class="vTimeField input-small " '
+            'size="8" placeholder="Time" /></p>'
+            "</div>"
+        )
 
     def test_SuitSplitDateTimeWidget(self):
         ssdtw = SuitSplitDateTimeWidget()
