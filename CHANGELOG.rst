@@ -5,6 +5,21 @@ Only important changes are mentioned below. See `commit log <https://github.com/
 requests <https://github.com/darklow/django-suit/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed>`_ for full changes.
 
 
+v2.0a2 (2025-12-30)
+--------------------
+
+* [Breaking] Django 5.x compatibility upgrade - Minimum Django version is now 5.0
+* [Breaking] Python 3.10+ required (Django 5.x requirement)
+* [Fix] Replaced deprecated ``ugettext_lazy`` with ``gettext_lazy``
+* [Fix] Updated URL imports from ``django.conf.urls`` to ``django.urls`` (use ``path`` and ``re_path``)
+* [Fix] Removed ``default_app_config`` (deprecated in Django 3.2, removed in Django 4.0)
+* [Fix] Changed ``MIDDLEWARE_CLASSES`` to ``MIDDLEWARE`` in demo settings
+* [Fix] Added required ``on_delete`` parameter to all ForeignKey fields
+* [Fix] Replaced ``__unicode__`` methods with ``__str__`` (Python 3)
+* [Fix] Simplified Python 2/3 compatibility code (removed Python 2 support)
+* [Fix] Removed Django < 1.9 version checks and ``assignment_tag`` usage
+
+
 v0.2.16 (2016-01-16)
 --------------------
 
