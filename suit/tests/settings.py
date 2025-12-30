@@ -23,6 +23,9 @@ MEDIA_ROOT = ""
 MEDIA_URL = ""
 SECRET_KEY = "vaO4Y<g#YRWG8;Md8noiLp>.w(w~q_b=|1`?9<x>0KxA%UB!63"
 
+# Django 5.x default auto field
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
