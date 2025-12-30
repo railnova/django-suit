@@ -4,6 +4,20 @@ Changelog
 Only important changes are mentioned below. See `commit log <https://github.com/darklow/django-suit/commits/develop>`_, `closed issues <https://github.com/darklow/django-suit/issues?direction=desc&sort=updated&state=closed>`_ and `closed pull
 requests <https://github.com/darklow/django-suit/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed>`_ for full changes.
 
+v0.3.0 (2025-12-30)
+--------------------
+
+* [Feature] Django 5.x support - Full upgrade to support Django 5.0 and 5.1.
+* [Breaking] Dropped support for Django < 5.0 and Python < 3.10.
+* [Fix] Updated all deprecated imports (django.conf.urls to django.urls).
+* [Fix] Updated force_text to force_str for Django 5.x compatibility.
+* [Fix] Updated ugettext to gettext for Django 5.x compatibility.
+* [Fix] Removed deprecated admin.autodiscover() calls.
+* [Fix] Updated MIDDLEWARE_CLASSES to MIDDLEWARE.
+* [Fix] Simplified template tag compatibility code for Django 5.x.
+* [Fix] Updated __unicode__ to __str__ in model classes.
+
+
 v0.2.28 (2019-10-02)
 --------------------
 

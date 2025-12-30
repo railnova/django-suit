@@ -14,21 +14,13 @@ except ImportError:
 
 django_version = utils.django_major_version()
 
-try:
-    # Django 1.9
-    from django.contrib.admin.utils import lookup_field
-except ImportError:
-    from django.contrib.admin.util import lookup_field
+# Django 5.x uses admin.utils
+from django.contrib.admin.utils import lookup_field
 
 register = template.Library()
 
-if django_version < (1, 9):
-    simple_tag = register.assignment_tag
-else:
-    simple_tag = register.simple_tag
 
-
-@register.filter(name='suit_conf')
+@register.filter(name="suit_conf")
 def suit_conf(name):
     value = get_config(name)
     return mark_safe(value) if isinstance(value, str) else value
@@ -36,12 +28,12 @@ def suit_conf(name):
 
 @register.tag
 def suit_date(parser, token):
-    return NowNode(get_config('HEADER_DATE_FORMAT'))
+    return NowNode(get_config("HEADER_DATE_FORMAT"))
 
 
 @register.tag
 def suit_time(parser, token):
-    return NowNode(get_config('HEADER_TIME_FORMAT'))
+    return NowNode(get_config("HEADER_TIME_FORMAT"))
 
 
 @register.filter
@@ -53,19 +45,18 @@ def field_contents_foreign_linked(admin_field):
     Use by replacing '{{ field.contents }}' in an admin template (e.g.
     fieldset.html) with '{{ field|field_contents_foreign_linked }}'.
     """
-    fieldname = admin_field.field['field']
+    fieldname = admin_field.field["field"]
     displayed = admin_field.contents()
     obj = admin_field.form.instance
 
-    if not hasattr(admin_field.model_admin,
-                   'linked_readonly_fields') or fieldname not in admin_field \
-            .model_admin \
-            .linked_readonly_fields:
+    if (
+        not hasattr(admin_field.model_admin, "linked_readonly_fields")
+        or fieldname not in admin_field.model_admin.linked_readonly_fields
+    ):
         return displayed
 
     try:
-        fieldtype, attr, value = lookup_field(fieldname, obj,
-                                              admin_field.model_admin)
+        fieldtype, attr, value = lookup_field(fieldname, obj, admin_field.model_admin)
     except ObjectDoesNotExist:
         fieldtype = None
 
@@ -97,10 +88,11 @@ def suit_bc_value(*args):
 
 @simple_tag
 def admin_extra_filters(cl):
-    """ Return the dict of used filters which is not included
-    in list_filters form """
-    used_parameters = list(itertools.chain(*(s.used_parameters.keys()
-                                             for s in cl.filter_specs)))
+    """Return the dict of used filters which is not included
+    in list_filters form"""
+    used_parameters = list(
+        itertools.chain(*(s.used_parameters.keys() for s in cl.filter_specs))
+    )
     return dict((k, v) for k, v in cl.params.items() if k not in used_parameters)
 
 
@@ -130,7 +122,7 @@ def django_version_gte(string):
 
 
 def str_to_version(string):
-    return tuple([int(s) for s in string.split('.')])
+    return tuple([int(s) for s in string.split(".")])
 
 
 if django_version < (1, 9):
@@ -139,10 +131,10 @@ if django_version < (1, 9):
     def add_preserved_filters(*args, **kwargs):
         pass
 
+
 if django_version < (1, 5):
     # Add admin_urlquote filter to support Django 1.4
     from django.contrib.admin.util import quote
-
 
     @register.filter
     def admin_urlquote(value):
