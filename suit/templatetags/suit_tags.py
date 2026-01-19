@@ -147,3 +147,8 @@ if django_version < (1, 5):
     @register.filter
     def admin_urlquote(value):
         return quote(value)
+
+
+@register.filter
+def is_length_one(value):
+    return len(value) == 1

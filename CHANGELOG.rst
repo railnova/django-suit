@@ -10,6 +10,7 @@ v0.2.39 (2026-01-19)
     - The `USE_L10N` setting has been be removed.
     - The `length_is` template filter has been removed.
     - Upgrade `sqlparse` to version **0.5.5**.
+    - Added a new template filter `is_length_one` to check if a list has exactly one item (used in `fieldset.html`).
 
 v0.2.38 (2023-11-20)
 --------------------
